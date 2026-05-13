@@ -30,3 +30,10 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Editor & tooling
+.claude/
+.cursor/
+.idea/
+.vscode/
+*.swp
