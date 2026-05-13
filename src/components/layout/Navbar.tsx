@@ -39,14 +39,15 @@ export function Navbar() {
   const isArtistPath = pathname.startsWith("/artist-dashboard");
   const navLinks     = isArtistPath ? ARTIST_LINKS : PATRON_LINKS;
 
-  // Hidden on the landing page — it has its own full-screen standalone design
-  if (pathname === "/") return null;
-
+  // Must be before any early return — hooks cannot be called conditionally
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 16);
     window.addEventListener("scroll", handler);
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  // Hidden on the landing page — it has its own full-screen standalone design
+  if (pathname === "/") return null;
 
   return (
     <nav className={cn(

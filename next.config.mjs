@@ -40,11 +40,11 @@ const nextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://checkout.razorpay.com",
-              "style-src 'self' 'unsafe-inline'",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "img-src 'self' data: blob: https://images.unsplash.com https://*.supabase.co https://oaidalleapiprodscus.blob.core.windows.net https://picsum.photos",
               "connect-src 'self' https://*.supabase.co https://api.openai.com https://api.anthropic.com https://api.razorpay.com",
               "frame-src https://api.razorpay.com https://checkout.razorpay.com",
-              "font-src 'self'",
+              "font-src 'self' https://fonts.gstatic.com",
               "object-src 'none'",
               "base-uri 'self'",
             ].join("; "),
