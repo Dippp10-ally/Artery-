@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#F5EDE3"/>
+
+  <!-- Decorative border -->
+  <rect x="24" y="24" width="1152" height="582" rx="16" stroke="#D4BFA8" stroke-width="2" fill="none"/>
+
+  <!-- Warli-style decorative dots top-right -->
+  <g opacity="0.15" fill="#A38A6D">
+    <circle cx="1100" cy="80" r="6"/><circle cx="1120" cy="60" r="4"/>
+    <circle cx="1080" cy="60" r="4"/><circle cx="1140" cy="80" r="5"/>
+    <circle cx="1060" cy="80" r="5"/><circle cx="1100" cy="40" r="3"/>
+    <circle cx="1100" cy="110" r="5"/><circle cx="1130" cy="100" r="4"/>
+    <circle cx="1070" cy="100" r="4"/>
+  </g>
+
+  <!-- Diamond logo mark -->
+  <text x="600" y="250" font-family="Georgia, 'Times New Roman', serif"
+        font-size="72" text-anchor="middle" fill="#A38A6D">◆</text>
+
+  <!-- ARTERY wordmark -->
+  <text x="600" y="360" font-family="Georgia, 'Times New Roman', serif"
+        font-size="96" font-weight="400" text-anchor="middle" fill="#2C2118" letter-spacing="12">ARTERY</text>
+
+  <!-- Tagline -->
+  <text x="600" y="430" font-family="Georgia, 'Times New Roman', serif"
+        font-size="28" text-anchor="middle" fill="#8C7B6B" letter-spacing="2">
+    Helping you pump that art in your blood
+  </text>
+
+  <!-- Bottom decoration line -->
+  <line x1="400" y1="490" x2="800" y2="490" stroke="#D4BFA8" stroke-width="1"/>
+
+  <!-- Sub-tagline -->
+  <text x="600" y="530" font-family="Georgia, 'Times New Roman', serif"
+        font-size="20" text-anchor="middle" fill="#B8A898" letter-spacing="1">
+    Generate · Commission · Collect Indian Art
+  </text>
+</svg>

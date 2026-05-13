@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ─────────────────────────────────────── */
+:root {
+  --font-serif:  'Playfair Display', Georgia, serif;
+  --font-sans:   'Inter', system-ui, sans-serif;
+
+  /* Palette */
+  --cream:       #F7F5F0;
+  --cream-dark:  #EAE6DE;
+  --cream-card:  #F2EFE8;
+  --ink:         #2C2C2C;
+  --ink-soft:    #787065;
+  --ink-faint:   #A89E96;
+  --accent:      #A38A6D;
+  --accent-dark: #8F765A;
+  --accent-warm: #C4A882;
+}
+
+/* ─── Reset ─────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; padding: 0; margin: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 7px; }
+::-webkit-scrollbar-track  { background: var(--cream-dark); }
+::-webkit-scrollbar-thumb  { background: #C4B49E; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ─── Text selection ─────────────────────────────────────────────── */
+::selection { background: rgba(163, 138, 109, 0.25); color: var(--ink); }
+
+/* ─── Animations ─────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes drift {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  50%  { transform: translate(6px, 8px) rotate(1deg); }
+  100% { transform: translate(-4px, 4px) rotate(-0.5deg); }
+}
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10%  { transform: translate(-4%, -4%); }
+  20%  { transform: translate(-8%,  4%); }
+  30%  { transform: translate( 4%, -8%); }
+  40%  { transform: translate(-4%, 12%); }
+  50%  { transform: translate(-8%,  4%); }
+  60%  { transform: translate(12%,  0%); }
+  70%  { transform: translate( 0%,  8%); }
+  80%  { transform: translate(-12%, 0%); }
+  90%  { transform: translate( 8%,  4%); }
+}
+@keyframes warliFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.045; }
+  50%       { transform: translateY(-8px) rotate(1.5deg); opacity: 0.06; }
+}
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(163,138,109,0.35); }
+  50%       { box-shadow: 0 0 0 8px rgba(163,138,109,0); }
+}
+
+/* ─── Utility classes ────────────────────────────────────────────── */
+.animate-fade-in  { animation: fadeIn  0.6s ease-out both; }
+.animate-slide-up { animation: slideUp 0.55s ease-out both; }
+.animate-drift    { animation: drift 25s ease-in-out infinite alternate; }
+.animate-grain    { animation: grain  8s steps(10) infinite; }
+.animate-warli-float { animation: warliFloat 8s ease-in-out infinite; }
+
+/* ─── Noise / grain texture overlay ─────────────────────────────── */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* ─── Paper texture (subtle aged-paper feel) ─────────────────────── */
+.bg-paper {
+  background-image: url('/images/bg-paper-texture.png');
+  background-size: 300px 300px;
+  background-repeat: repeat;
+  background-blend-mode: multiply;
+}
+
+/* ─── Component tokens ───────────────────────────────────────────── */
+@layer components {
+  .btn-accent {
+    @apply bg-[#A38A6D] text-[#F7F5F0] px-8 py-3.5 rounded-md font-sans
+           text-sm tracking-wide font-medium
+           hover:bg-[#8F765A] transition-all duration-300 shadow-md
+           active:scale-[0.98];
+  }
+  .btn-outline {
+    @apply border border-[#EAE6DE] text-[#2C2C2C] px-8 py-3.5 rounded-md
+           font-sans text-sm tracking-wide font-medium bg-white
+           hover:border-[#A38A6D] hover:text-[#A38A6D]
+           transition-all duration-300 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply text-[#787065] px-4 py-2 rounded-md text-sm font-medium
+           hover:text-[#2C2C2C] hover:bg-[#EAE6DE]/60 transition-all duration-200;
+  }
+  .card-warm {
+    @apply bg-[#F2EFE8] border border-[#EAE6DE] rounded-lg;
+  }
+  .input-warm {
+    @apply bg-[#F2EFE8] border border-[#EAE6DE] rounded-md px-4 py-2.5
+           text-[#2C2C2C] placeholder:text-[#A89E96] text-sm
+           focus:outline-none focus:border-[#A38A6D] focus:ring-1 focus:ring-[#A38A6D]/30
+           transition-all duration-200;
+  }
+  .section-label {
+    @apply text-[#A38A6D] font-sans text-xs uppercase tracking-[0.18em] font-medium;
+  }
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl text-[#2C2C2C] font-normal leading-tight;
+  }
+  .section-body {
+    @apply text-[#787065] font-sans text-base leading-relaxed;
+  }
+  .tag-pill {
+    @apply text-[11px] uppercase tracking-wider text-[#787065]
+           bg-[#EAE6DE]/60 px-2.5 py-1 rounded-sm border border-[#EAE6DE];
+  }
+}

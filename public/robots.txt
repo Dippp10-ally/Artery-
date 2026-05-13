@@ -1,0 +1,28 @@
+User-agent: *
+
+# Allow all public pages
+Allow: /
+Allow: /explore
+Allow: /lens
+Allow: /artists/
+Allow: /commissions
+Allow: /generate
+Allow: /about
+Allow: /faq
+Allow: /support
+Allow: /subscription
+
+# Disallow private / functional routes
+Disallow: /api/
+Disallow: /patron-dashboard
+Disallow: /orders
+Disallow: /cart
+Disallow: /login
+Disallow: /commissions/new
+Disallow: /artist-dashboard
+
+# Disallow Next.js internals
+Disallow: /_next/
+
+# Sitemap location
+Sitemap: https://artery.art/sitemap.xml
