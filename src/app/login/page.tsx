@@ -155,7 +155,7 @@ export default function LoginPage() {
         {/* Logo */}
         <Link href="/" className="flex items-center justify-center gap-2 mb-10 group">
           <span className="text-accent text-2xl font-serif group-hover:rotate-45 transition-transform duration-500">◆</span>
-          <span className="font-serif text-2xl text-ink tracking-tight">Artisan AI</span>
+          <span className="font-serif text-2xl text-ink tracking-tight">ARTERY</span>
         </Link>
 
         {/* Card */}

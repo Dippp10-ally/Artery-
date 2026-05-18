@@ -8,6 +8,12 @@ Rather than replacing artists, Artery uses AI as a communication tool — custom
 
 Artery gives artists a clearer brief, fairer pricing power, and a platform that positions human creativity where it deserves to be.
 
+**Live demo:** [artery-ppwv8wdt4-mailboxswayam-3742s-projects.vercel.app](https://artery-ppwv8wdt4-mailboxswayam-3742s-projects.vercel.app)
+
+---
+
+![Artery — landing page](public/images/og-default.svg)
+
 ---
 
 ## How it works

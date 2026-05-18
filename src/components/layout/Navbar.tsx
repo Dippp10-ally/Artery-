@@ -63,7 +63,7 @@ export function Navbar() {
         >
           <span className="text-accent text-lg group-hover:rotate-45 transition-transform duration-500 font-serif leading-none">◆</span>
           <span className="font-serif text-xl text-ink tracking-tight font-medium group-hover:text-accent transition-colors duration-200">
-            Artisan AI
+            ARTERY
           </span>
         </button>
 

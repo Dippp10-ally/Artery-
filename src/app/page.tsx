@@ -113,7 +113,7 @@ export default function LandingPage() {
           style={{ animationDelay: "900ms" }}
         >
           <p className="text-[10px] uppercase tracking-[0.28em] text-ink-faint/60 font-sans">
-            Artisan AI &nbsp;·&nbsp; Curated Intelligence
+            ARTERY &nbsp;·&nbsp; Curated Intelligence
           </p>
         </div>
       </div>
